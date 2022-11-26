@@ -3,8 +3,10 @@
   place-items: center;
 
   #logo {
+    height: 12rem;
+
     @include respond(phone) {
-      height: 12rem;
+      height: 10rem;
     }
   }
 }

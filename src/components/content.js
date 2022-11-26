@@ -418,7 +418,7 @@ function Content() {
                     </div>
                 </div>
 
-                <div className='card'>
+                <div className='card' id='g'>
                     <div className='cardOne'>
                         <h2>
                             Group G
@@ -479,7 +479,7 @@ function Content() {
                     </div>
                 </div>
 
-                <div className='card'>
+                <div className='card' id='h'>
                     <div className='cardOne'>
                         <h2>
                             Group H

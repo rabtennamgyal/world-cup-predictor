@@ -3,6 +3,9 @@
     display: grid;
     grid-template-rows: 10% 90%;
 
+    @include respond(phone) {
+        grid-template-rows: 2% 98%;
+    }
 
     @include respond(ultra) {
         justify-self: center;
@@ -18,7 +21,6 @@
 
         h1 {
             font-size: 2rem;
-            font-family: Rubik+Distressed;
         }
     }
 
