@@ -1,3 +1,4 @@
+import React, {useState} from 'react';
 // Group A 
 import holland from '../assets/flags/holland.svg';
 import senegal from '../assets/flags/senegal.png';
@@ -43,17 +44,30 @@ import kor from '../assets/flags/korea.svg';
 
 
 function Content() {
+    const [queue, setqueue] = useState(0);
+
+
     const pickTeams = (e) => {
         // 1. identify the card 
         const card = e.target.parentElement.parentElement.parentElement
         const pic = e.target.src;
         // 2. identify  the queue
-        const cur = card.children[1].children[0].children[0].children[1]
+        let cur;
+        //cur = card.children[1].$children[0].children[0].children[1];
+        cur = card.children[1].children[queue].children[0].children[1];
         // 3. manipulate the dom
         const img = document.createElement('img');
         img.classList.add('flagstyle')
         img.src = pic;
-        cur.appendChild(img)
+        cur.appendChild(img);
+        if (queue === 3) {
+            setqueue(0)
+        } else {
+            setqueue(queue + 1);
+        }
+        console.log(e.target.parentElement)
+        const cards = e.target.parentElement;
+        cards.removeChild(e.target)
     };
 
     return (
@@ -73,9 +87,9 @@ function Content() {
 
                         <div className='flags'>
                             <img className='flag' src={holland} alt='flag' onClick={pickTeams} />
-                            <img className='flag' src={senegal} alt='flag' />
-                            <img className='flag' src={ecuador} alt='flag' />
-                            <img className='flag' src={qatar} alt='flag' />
+                            <img className='flag' src={senegal} alt='flag' onClick={pickTeams}/>
+                            <img className='flag' src={ecuador} alt='flag' onClick={pickTeams}/>
+                            <img className='flag' src={qatar} alt='flag' onClick={pickTeams}/>
                         </div>
                     </div>
 
@@ -133,10 +147,10 @@ function Content() {
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={England} alt='flag' />
-                            <img className='flag' src={Iran} alt='flag' />
-                            <img className='flag' src={USA} alt='flag' />
-                            <img className='flag' src={Wales} alt='flag' />
+                            <img className='flag' src={England} alt='flag'onClick={pickTeams}  />
+                            <img className='flag' src={Iran} alt='flag' onClick={pickTeams}/>
+                            <img className='flag' src={USA} alt='flag' onClick={pickTeams}/>
+                            <img className='flag' src={Wales} alt='flag' onClick={pickTeams}/>
                         </div>
                     </div>
 
