@@ -4,7 +4,7 @@ import logo from '../assets/logo/logo.svg';
 function Header() {
     return (
         <div className="header">
-            <img src={logo} alt='logo' />
+            <img id='logo' src={logo} alt='logo' />
         </div>
     )
 };

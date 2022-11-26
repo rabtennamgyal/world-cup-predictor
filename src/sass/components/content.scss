@@ -3,10 +3,16 @@
     display: grid;
     grid-template-rows: 10% 90%;
 
+
+    @include respond(ultra) {
+        justify-self: center;
+        width: 150rem;
+    }
+
     .title {
         justify-self: center;
         height: 100%;
-        width: 90%;
+        width: 86%;
         display: grid;
         align-items: center;
 
@@ -25,8 +31,16 @@
         grid-template-columns: repeat(3, 1fr);
         // grid-template-rows: repeat(2, 1fr);
 
+        @include respond(phone) {
+            grid-template-columns: 1fr;
+        }
+
+        @include respond(tab) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
         .card {
-            margin: 10px;
+            margin: 10px 30px;
             display: grid;
             grid-template-rows: 35% 65%;
             height: 45rem;
@@ -56,10 +70,12 @@
                     width: 90%;
 
                     .flag {
+                        background-color: #fff;
                         cursor: pointer;
-                        border: .1px solid #fff;
-                        height: 3rem;
-                        border-radius: 1px;
+                        //border: .1px solid #fff;
+                        height: 30px;
+                        width: 44px;
+                        border-radius: 3px;
                     }
                 }
             }

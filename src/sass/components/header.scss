@@ -1,4 +1,10 @@
 .header {
-    display: grid;
-    place-items: center;
+  display: grid;
+  place-items: center;
+
+  #logo {
+    @include respond(phone) {
+      height: 12rem;
+    }
+  }
 }
