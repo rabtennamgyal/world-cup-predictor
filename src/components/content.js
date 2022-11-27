@@ -41,34 +41,72 @@ import uru from '../assets/flags/uru.png';
 import kor from '../assets/flags/korea.svg';
 
 
+const allFlags = {
+    NED: 'Netherlands', 
+    ECU: 'Ecuador',
+    SEN: 'Senegal',
+    QAT: 'Qatar',
+    ENG: 'England',
+    IRN: 'Iran',
+    USA: 'USA',
+    WAL: 'Wales'
+};
+
 
 
 function Content() {
     const [queue, setqueue] = useState(0);
 
-
+    // This function deals with all the dom manipulation.
     const pickTeams = (e) => {
         // 1. identify the card 
-        const card = e.target.parentElement.parentElement.parentElement
+        const card = e.target.parentElement.parentElement.parentElement.parentElement
         const pic = e.target.src;
         // 2. identify  the queue
         let cur;
+        let cur2;
         //cur = card.children[1].$children[0].children[0].children[1];
         cur = card.children[1].children[queue].children[0].children[1];
+        cur2 = card.children[1].children[queue].children[1];
         // 3. manipulate the dom
+
+        // a. create img element
         const img = document.createElement('img');
         img.classList.add('flagstyle')
         img.src = pic;
+        // b. create para element 
+        const para = document.createElement('p');
+        para.classList.add('parastyle');
+
+        for (let key in allFlags) {
+            const code = e.target.parentElement.childNodes[1].textContent;
+
+            if (code === key) {
+                para.textContent = allFlags[`${code}`];
+            }
+        }
+        
+    
+
         cur.appendChild(img);
+        cur2.appendChild(para);
+
         if (queue === 3) {
             setqueue(0)
         } else {
             setqueue(queue + 1);
-        }
-        console.log(e.target.parentElement)
+        };
+
         const cards = e.target.parentElement;
-        cards.removeChild(e.target)
+        let child = cards.lastElementChild;
+
+        while(child) {
+            cards.removeChild(child);
+            child = cards.lastElementChild;
+        }
     };
+
+    // This function deals with the data.
 
     return (
         <div className='content'>
@@ -86,10 +124,25 @@ function Content() {
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={holland} alt='flag' onClick={pickTeams} />
-                            <img className='flag' src={senegal} alt='flag' onClick={pickTeams}/>
-                            <img className='flag' src={ecuador} alt='flag' onClick={pickTeams}/>
-                            <img className='flag' src={qatar} alt='flag' onClick={pickTeams}/>
+                            <div className='container'>
+                                <img className='flag' src={holland} alt='flag' onClick={pickTeams} />
+                                <p>NED</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={ecuador} alt='flag' onClick={pickTeams}/>
+                                <p>ECU</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={senegal} alt='flag' onClick={pickTeams}/>
+                                <p>SEN</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={qatar} alt='flag' onClick={pickTeams}/>
+                                <p>QAT</p>
+                            </div>
                         </div>
                     </div>
 
@@ -147,10 +200,25 @@ function Content() {
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={England} alt='flag'onClick={pickTeams}  />
-                            <img className='flag' src={Iran} alt='flag' onClick={pickTeams}/>
-                            <img className='flag' src={USA} alt='flag' onClick={pickTeams}/>
-                            <img className='flag' src={Wales} alt='flag' onClick={pickTeams}/>
+                            <div className='container'>
+                                <img className='flag' src={England} alt='flag' onClick={pickTeams} />
+                                <p>ENG</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Iran} alt='flag' onClick={pickTeams}/>
+                                <p>IRN</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={USA} alt='flag' onClick={pickTeams}/>
+                                <p>USA</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Wales} alt='flag' onClick={pickTeams}/>
+                                <p>WAL</p>
+                            </div>
                         </div>
                     </div>
 
@@ -204,14 +272,29 @@ function Content() {
                 <div className='card'>
                     <div className='cardOne'>
                         <h2>
-                            Group A
+                            Group C
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={Argentina} alt='flag' />
-                            <img className='flag' src={Saudi} alt='flag' />
-                            <img className='flag' src={Mexico} alt='flag' />
-                            <img className='flag' src={Poland} alt='flag' />
+                            <div className='container'>
+                                <img className='flag' src={Argentina} alt='flag' onClick={pickTeams} />
+                                <p>ARG</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Saudi} alt='flag' onClick={pickTeams}/>
+                                <p>KSA</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Mexico} alt='flag' onClick={pickTeams}/>
+                                <p>MEX</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Poland} alt='flag' onClick={pickTeams}/>
+                                <p>POL</p>
+                            </div>
                         </div>
                     </div>
 
@@ -261,7 +344,7 @@ function Content() {
                         </div>
                     </div>
                 </div>
-                
+
                 <div className='card'>
                     <div className='cardOne'>
                         <h2>
@@ -269,10 +352,25 @@ function Content() {
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={France} alt='flag' />
-                            <img className='flag' src={Aus} alt='flag' />
-                            <img className='flag' src={Den} alt='flag' />
-                            <img className='flag' src={Tun} alt='flag' />
+                            <div className='container'>
+                                <img className='flag' src={France} alt='flag' onClick={pickTeams} />
+                                <p>FRA</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Aus} alt='flag' onClick={pickTeams}/>
+                                <p>AUS</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Den} alt='flag' onClick={pickTeams}/>
+                                <p>DEN</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={Tun} alt='flag' onClick={pickTeams}/>
+                                <p>TUN</p>
+                            </div>
                         </div>
                     </div>
 
@@ -322,7 +420,7 @@ function Content() {
                         </div>
                     </div>
                 </div>
-                                
+
                 <div className='card'>
                     <div className='cardOne'>
                         <h2>
@@ -330,10 +428,25 @@ function Content() {
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={Spain} alt='flag' />
-                            <img className='flag' src={rica} alt='flag' />
-                            <img className='flag' src={ger} alt='flag' />
-                            <img className='flag' src={japan} alt='flag' />
+                            <div className='container'>
+                                <img className='flag' src={Spain} alt='flag' onClick={pickTeams} />
+                                <p>ESP</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={rica} alt='flag' onClick={pickTeams}/>
+                                <p>CRC</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={ger} alt='flag' onClick={pickTeams}/>
+                                <p>GER</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={japan} alt='flag' onClick={pickTeams}/>
+                                <p>JPN</p>
+                            </div>
                         </div>
                     </div>
 
@@ -391,10 +504,25 @@ function Content() {
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={Bel} alt='flag' />
-                            <img className='flag' src={can} alt='flag' />
-                            <img className='flag' src={mar} alt='flag' />
-                            <img className='flag' src={cor} alt='flag' />
+                            <div className='container'>
+                                <img className='flag' src={Bel} alt='flag' onClick={pickTeams} />
+                                <p>BEL</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={can} alt='flag' onClick={pickTeams}/>
+                                <p>CAN</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={mar} alt='flag' onClick={pickTeams}/>
+                                <p>MAR</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={cor} alt='flag' onClick={pickTeams}/>
+                                <p>CRO</p>
+                            </div>
                         </div>
                     </div>
 
@@ -445,17 +573,32 @@ function Content() {
                     </div>
                 </div>
 
-                <div className='card' id='g'>
+                <div className='card'>
                     <div className='cardOne'>
                         <h2>
                             Group G
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={bra} alt='flag' />
-                            <img className='flag' src={ser} alt='flag' />
-                            <img className='flag' src={sui} alt='flag' />
-                            <img className='flag' src={cam} alt='flag' />
+                            <div className='container'>
+                                <img className='flag' src={bra} alt='flag' onClick={pickTeams} />
+                                <p>BRA</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={ser} alt='flag' onClick={pickTeams}/>
+                                <p>SRB</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={sui} alt='flag' onClick={pickTeams}/>
+                                <p>SUI</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={cam} alt='flag' onClick={pickTeams}/>
+                                <p>CMR</p>
+                            </div>
                         </div>
                     </div>
 
@@ -506,17 +649,32 @@ function Content() {
                     </div>
                 </div>
 
-                <div className='card' id='h'>
+                <div className='card'>
                     <div className='cardOne'>
                         <h2>
                             Group H
                         </h2>
 
                         <div className='flags'>
-                            <img className='flag' src={port} alt='flag' />
-                            <img className='flag' src={gha} alt='flag' />
-                            <img className='flag' src={uru} alt='flag' />
-                            <img className='flag' src={kor} alt='flag' />
+                            <div className='container'>
+                                <img className='flag' src={port} alt='flag' onClick={pickTeams} />
+                                <p>POR</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={gha} alt='flag' onClick={pickTeams}/>
+                                <p>GHA</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={uru} alt='flag' onClick={pickTeams}/>
+                                <p>URU</p>
+                            </div>
+
+                            <div className='container'>
+                                <img className='flag' src={kor} alt='flag' onClick={pickTeams}/>
+                                <p>KOR</p>
+                            </div>
                         </div>
                     </div>
 

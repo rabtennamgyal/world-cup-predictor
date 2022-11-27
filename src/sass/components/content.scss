@@ -71,13 +71,26 @@
                     justify-content: space-around;
                     width: 90%;
 
-                    .flag {
-                        background-color: #fff;
-                        cursor: pointer;
-                        //border: .1px solid #fff;
-                        height: 30px;
-                        width: 44px;
-                        border-radius: 3px;
+                    .container {
+                        display: flex;
+                        flex-direction: column;
+                        
+                        .flag {
+                            background-color: #fff;
+                            cursor: pointer;
+                            //border: .1px solid #fff;
+                            height: 30px;
+                            width: 44px;
+                            border-radius: 3px;
+                        }
+
+                        p {
+                            margin-top: 3px;
+                            align-self: center;
+                            color: #fff;
+                            font-size: 1.5rem;
+                            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+                        }
                     }
                 }
             }
@@ -119,6 +132,18 @@
                                 width: 44px;
                                 border-radius: 3px;
                             }
+                        }
+                    }
+
+                    .choice {
+                        display: grid;
+                        align-items: center;
+                        
+                        .parastyle {
+                            margin: 0 1rem;
+                            color: #000;
+                            font-family: monospace, sans-serif;
+                            font-size: 2rem;
                         }
                     }
                 }
