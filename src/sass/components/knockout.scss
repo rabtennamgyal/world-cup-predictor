@@ -1,0 +1,7 @@
+.knockout {
+    min-height: 150rem;
+    max-height: auto;
+    display: grid;
+    grid-template-rows: 5% 95%;
+    background-color: green($color: #000000);
+}

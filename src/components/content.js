@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+
 // Group A
 import holland from "../assets/flags/holland.svg";
 import senegal from "../assets/flags/senegal.png";
@@ -75,21 +75,28 @@ const allFlags = {
   KOR: "Korea",
 };
 
-function Content() {
-  const [queue, setqueue] = useState(0);
+let groupStage = 0;
+
+function Content({setroundOne, setroundTwo}) {
+  // const [queue, setqueue] = useState(0);
 
   // This function deals with all the dom manipulation.
   const pickTeams = (e) => {
-    // 1. identify the card
+
     const card =
       e.target.parentElement.parentElement.parentElement.parentElement;
+
+    let val = card.getAttribute('value')
+    console.log(val)
+    
+    const groupName = card.childNodes[0].childNodes[0].textContent.split(' ')[1];
+    console.log(groupName)
+
     const pic = e.target.src;
-    // 2. identify  the queue
     let cur;
     let cur2;
-    cur = card.children[1].children[queue].children[0].children[1];
-    cur2 = card.children[1].children[queue].children[1];
-    // 3. manipulate the dom
+    cur = card.children[1].children[val].children[0].children[1];
+    cur2 = card.children[1].children[val].children[1];
 
     // a. create img element
     const img = document.createElement("img");
@@ -110,11 +117,9 @@ function Content() {
     cur.appendChild(img);
     cur2.appendChild(para);
 
-    if (queue === 3) {
-      setqueue(0);
-    } else {
-      setqueue(queue + 1);
-    }
+    // setting the new attribute for that particular html element
+    let num = Number(val)
+    card.setAttribute('value', Number(num + 1))
 
     const cards = e.target.parentElement;
     let child = cards.lastElementChild;
@@ -123,9 +128,14 @@ function Content() {
       cards.removeChild(child);
       child = cards.lastElementChild;
     }
-  };
 
-  // This function deals with the data.
+    groupStage = groupStage + 1;
+
+    if (groupStage === 32) {
+        setroundOne(false);
+        setroundTwo(true);
+    }
+  };
 
   return (
     <div className="content">
@@ -134,7 +144,7 @@ function Content() {
       </div>
 
       <div className="cards">
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group A</h2>
 
@@ -220,7 +230,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group B</h2>
 
@@ -306,7 +316,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group C</h2>
 
@@ -392,7 +402,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group D</h2>
 
@@ -478,7 +488,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group E</h2>
 
@@ -564,7 +574,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group F</h2>
 
@@ -650,7 +660,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group G</h2>
 
@@ -736,7 +746,7 @@ function Content() {
           </div>
         </div>
 
-        <div className="card">
+        <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group H</h2>
 
