@@ -110,9 +110,11 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
         if (val <= 1) {
           
           let data = {
+            code: code,
             group: groupName,
             team: allFlags[`${code}`],
-            position: val
+            position: val,
+            img: pic
           };
 
           setTeams([...teams, data]);

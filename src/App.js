@@ -3,7 +3,6 @@ import Content from "./components/content";
 import Knockout from "./components/knockout";
 import { useState } from "react";
 
-
 function App() {
   const [roundOne, setroundOne] = useState(true);
   const [roundTwo, setroundTwo] = useState(false);
@@ -12,8 +11,15 @@ function App() {
   return (
     <div className="App">
       <Header />
-      { roundOne && <Content setroundOne={setroundOne} setroundTwo={setroundTwo} teams={teams} setTeams={setTeams} />}
-      { roundTwo && <Knockout setroundOne={setroundOne} setroundTwo={setroundTwo} />}
+      {roundOne && (
+        <Content
+          setroundOne={setroundOne}
+          setroundTwo={setroundTwo}
+          teams={teams}
+          setTeams={setTeams}
+        />
+      )}
+      {roundTwo && <Knockout teams={teams} />}
     </div>
   );
 }
