@@ -1,4 +1,3 @@
-
 // Group A
 import holland from "../assets/flags/holland.svg";
 import senegal from "../assets/flags/senegal.png";
@@ -77,20 +76,16 @@ const allFlags = {
 
 let groupStage = 0;
 
-function Content({setroundOne, setroundTwo}) {
-  // const [queue, setqueue] = useState(0);
-
+function Content({ setroundOne, setroundTwo, teams, setTeams }) {
   // This function deals with all the dom manipulation.
   const pickTeams = (e) => {
-
     const card =
       e.target.parentElement.parentElement.parentElement.parentElement;
 
-    let val = card.getAttribute('value')
-    console.log(val)
-    
-    const groupName = card.childNodes[0].childNodes[0].textContent.split(' ')[1];
-    console.log(groupName)
+    let val = card.getAttribute("value");
+
+    const groupName =
+      card.childNodes[0].childNodes[0].textContent.split(" ")[1];
 
     const pic = e.target.src;
     let cur;
@@ -111,6 +106,17 @@ function Content({setroundOne, setroundTwo}) {
 
       if (code === key) {
         para.textContent = allFlags[`${code}`];
+
+        if (val <= 1) {
+          
+          let data = {
+            group: groupName,
+            team: allFlags[`${code}`],
+            position: val
+          };
+
+          setTeams([...teams, data]);
+        }
       }
     }
 
@@ -118,8 +124,8 @@ function Content({setroundOne, setroundTwo}) {
     cur2.appendChild(para);
 
     // setting the new attribute for that particular html element
-    let num = Number(val)
-    card.setAttribute('value', Number(num + 1))
+    let num = Number(val);
+    card.setAttribute("value", Number(num + 1));
 
     const cards = e.target.parentElement;
     let child = cards.lastElementChild;
@@ -132,8 +138,8 @@ function Content({setroundOne, setroundTwo}) {
     groupStage = groupStage + 1;
 
     if (groupStage === 32) {
-        setroundOne(false);
-        setroundTwo(true);
+      setroundOne(false);
+      setroundTwo(true);
     }
   };
 
@@ -143,7 +149,7 @@ function Content({setroundOne, setroundTwo}) {
         <h1>MAKE YOUR WORLD CUP PREDICTIONS</h1>
       </div>
 
-      <div className="cards">
+      <div className="cards" id='parent'>
         <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group A</h2>
