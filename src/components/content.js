@@ -76,6 +76,10 @@ const allFlags = {
 
 let groupStage = 0;
 
+setInterval(() => {
+  console.log(groupStage)
+}, 5000)
+
 function Content({ setroundOne, setroundTwo, teams, setTeams }) {
   // This function deals with all the dom manipulation.
   const pickTeams = (e) => {

@@ -1,6 +1,19 @@
 function Knockout({ teams }) {
-  const matchUp = [];
-  console.log(matchUp)
+  const matchUp = [];console.log(teams)
+  
+  function compare(a, b) {
+    if (a.group < b.group) {
+      return -1;
+    }
+
+    if (a.group > b.group) {
+      return 1;
+    }
+
+    return 0;
+  }; 
+
+  console.log(teams.sort(compare))
 
   const fixMatchUp = () => {
     const winners = [];
