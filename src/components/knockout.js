@@ -51,7 +51,6 @@ function Knockout({ teams }) {
                   </div>
 
                   <button>
-                    btn
                   </button>
                 </div>
 
@@ -62,7 +61,6 @@ function Knockout({ teams }) {
                   </div>
 
                   <button>
-                    btn
                   </button>
                 </div>
               </div>
