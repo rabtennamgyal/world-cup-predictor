@@ -108,13 +108,12 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
         para.textContent = allFlags[`${code}`];
 
         if (val <= 1) {
-          
           let data = {
             code: code,
             group: groupName,
             team: allFlags[`${code}`],
             position: val,
-            img: pic
+            img: pic,
           };
 
           setTeams([...teams, data]);
@@ -139,7 +138,7 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
 
     groupStage = groupStage + 1;
 
-    if (groupStage === 32) {
+    if (groupStage === 2) {
       setroundOne(false);
       setroundTwo(true);
     }
@@ -151,7 +150,7 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
         <h1>MAKE YOUR WORLD CUP PREDICTIONS</h1>
       </div>
 
-      <div className="cards" id='parent'>
+      <div className="cards" id="parent">
         <div className="card" value={0}>
           <div className="cardOne">
             <h2>Group A</h2>
