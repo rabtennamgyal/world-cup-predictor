@@ -49,16 +49,36 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
-          .boxContent {
-            display: flex;
-            justify-content: space-around;
+          #firstBox {
+            border-bottom: 0.1px solid #888888;
+          }
 
-            p {
-              font-size: 1.5rem;
+          .boxContent {
+            display: grid;
+            grid-template-columns: 80% 20%;
+            align-items: center;
+
+            .teamName {
+              height: 100%;
+              display: flex;
+              //justify-content: center;
+              align-items: center;
+
+              img {
+                margin: 0 0.6rem 0 1rem;
+                height: 20px;
+                width: 30px;
+              }
+
+              p {
+                font-size: 2rem;
+                font-weight: 600;
+              }
             }
 
-            img {
-              height: 2rem;
+            button {
+              border-radius: 50rem;
+              width: 4rem;
             }
           }
         }

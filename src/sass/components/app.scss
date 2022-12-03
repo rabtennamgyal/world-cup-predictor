@@ -2,9 +2,14 @@
     min-height: 100vh;
     max-height: auto;
     display: grid;
-    grid-template-rows: 10% 90%;
+    grid-template-rows: 5% 95%;
 
     @include respond(phone) {
         grid-template-rows: 5% 95%;
+    }
+
+    @include respond(ultra) {
+        width: 1520px;
+        margin: 0 auto;
     }
 }

@@ -138,7 +138,7 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
 
     groupStage = groupStage + 1;
 
-    if (groupStage === 2) {
+    if (groupStage === 32) {
       setroundOne(false);
       setroundTwo(true);
     }
