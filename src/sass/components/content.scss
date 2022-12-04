@@ -6,6 +6,7 @@
 
   @include respond(phone) {
     grid-template-rows: 2% 98%;
+    height: 400rem;
   }
 
   @include respond(ultra) {
@@ -20,8 +21,19 @@
     display: grid;
     align-items: center;
 
+    @include respond(phone) {
+      width: 100%;
+    }
+
     h1 {
       font-size: 2rem;
+
+      @include respond(phone) {
+        justify-self: center;
+        width: 95%;
+        font-size: 2.3rem;
+        letter-spacing: 3px;
+      }
     }
   }
 
@@ -35,6 +47,9 @@
 
     @include respond(phone) {
       grid-template-columns: 1fr;
+      width: 100%;
+      height: 100%;
+      padding: 0px;
     }
 
     @include respond(tab) {
@@ -49,6 +64,11 @@
       border-radius: 10px;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
         rgba(0, 0, 0, 0.24) 0px 1px 2px;
+
+        @include respond(phone) {
+          justify-self: center;
+          width: 95%;
+        }
 
       .cardOne {
         border-top-left-radius: 10px;

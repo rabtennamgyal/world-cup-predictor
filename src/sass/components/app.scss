@@ -5,7 +5,7 @@
     grid-template-rows: 5% 95%;
 
     @include respond(phone) {
-        grid-template-rows: 5% 95%;
+        grid-template-rows: 4% 96%;
     }
 
     @include respond(ultra) {
