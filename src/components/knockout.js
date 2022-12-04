@@ -1,6 +1,7 @@
 function Knockout({ teams }) {
-  const matchUp = [];console.log(teams)
-  
+  const matchUp = [];
+  console.log(matchUp);
+
   function compare(a, b) {
     if (a.group < b.group) {
       return -1;
@@ -11,9 +12,9 @@ function Knockout({ teams }) {
     }
 
     return 0;
-  }; 
+  }
 
-  console.log(teams.sort(compare))
+  teams.sort(compare);
 
   const fixMatchUp = () => {
     const winners = [];
@@ -57,44 +58,198 @@ function Knockout({ teams }) {
           <div className="stage">
             {matchUp.map((el, i) => (
               <div className="boxx" key={i}>
-                <div className="boxContent" id='firstBox'>
-                  <div className='teamName'>
+                <div className="boxContent" id="firstBox">
+                  <div className="teamName">
                     <img src={el[0].img} alt="flag" />
                     <p>{el[0].team}</p>
                   </div>
 
-                  <button>
-                  </button>
+                  <button></button>
                 </div>
 
                 <div className="boxContent">
-                  <div className='teamName'>
-                      <img src={el[1].img} alt="flag" />
-                      <p>{el[1].team}</p>
+                  <div className="teamName">
+                    <img src={el[1].img} alt="flag" />
+                    <p>{el[1].team}</p>
                   </div>
 
-                  <button>
-                  </button>
+                  <button></button>
                 </div>
               </div>
             ))}
+            {/* <span id='ver1'></span>
+            <span id='ver2'></span>
+            <span id='ver3'></span>
+            <span id='ver4'></span> */}
           </div>
         </div>
 
         <div className="stages">
           <h2>QUARTER-FINALS</h2>
+
+          <div className="stage" id="quarter">
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div className="stages">
           <h2>SEMI-FINALS</h2>
+
+          <div className="stage" id="semi">
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <div className="stages">
+        {/* <div className="stages">
           <h2>THIRD-PLACE</h2>
-        </div>
+
+          <div className="stage" id="third">
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p>Team Name</p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p>Team Name</p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+          </div>
+        </div> */}
 
         <div className="stages">
           <h2>FINAL</h2>
+
+          <div className="stage" id="final">
+            <div className="boxx">
+              <div className="boxContent" id="firstBox">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+
+              <div className="boxContent">
+                <div className="teamName">
+                  <p></p>
+                </div>
+
+                <button></button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
