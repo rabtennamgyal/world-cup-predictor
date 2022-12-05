@@ -47,9 +47,9 @@ function Knockout({ teams }) {
 
   fixMatchUp();
 
-  const quarter = []; // quarter
-  const semi = []; // semi
-  const final = []; // final
+  // const quarter = []; // quarter
+  // const semi = []; // semi
+  // const final = []; // final
 
   const logTeams = (e) => {
     const team = e.target.parentElement.childNodes[0];

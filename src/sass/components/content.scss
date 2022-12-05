@@ -6,7 +6,7 @@
 
   @include respond(phone) {
     grid-template-rows: 4% 96%;
-    height: 400rem;
+    height: 3652px;
   }
 
   @include respond(tab) {
@@ -92,7 +92,9 @@
 
       @include respond(phone) {
         justify-self: center;
-        width: 410px;
+        height: 381px;
+        width: 340px;
+        margin: 0 1rem;
       }
 
       @include respond(tab) {
@@ -153,8 +155,13 @@
           grid-template-columns: 30% 70%;
 
           .list {
-            display: flex;
+            display: grid;
+            grid-template-columns: 35% 65%;
             align-items: center;
+
+            @include respond(phone) {
+              padding: 0 1rem;
+            }
 
             p {
               margin: 0 2rem;
@@ -162,6 +169,10 @@
               font-size: 2rem;
               font-weight: 600;
               align-self: center;
+
+              @include respond(phone) {
+                margin: 0rem;
+              }
             }
 
             span {
@@ -169,6 +180,10 @@
               height: 2.7rem;
               width: 4.1rem;
               background-color: #d4d4d4;
+
+              @include respond(phone) {
+                margin-left: -1.8rem;
+              }
 
               .flagstyle {
                 background-color: #fff;
