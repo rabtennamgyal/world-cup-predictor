@@ -1,12 +1,13 @@
 .header {
   display: grid;
   place-items: center;
+  background-color: #000000;
 
-  #logo {
-    height: 12rem;
+  // #logo {
+  //   height: 12rem;
 
-    @include respond(phone) {
-      height: 10rem;
-    }
-  }
+  //   @include respond(phone) {
+  //     height: 10rem;
+  //   }
+  // }
 }

@@ -1,5 +1,7 @@
+import NED from "../assets/flags/holland.svg";
+
 function Knockout({ teams }) {
-  const matchUp = [];
+  const matchUp = []; // Round of 16
   console.log(matchUp);
 
   function compare(a, b) {
@@ -45,6 +47,37 @@ function Knockout({ teams }) {
 
   fixMatchUp();
 
+  const quarter = []; // quarter
+  const semi = []; // semi
+  const final = []; // final
+
+  const logTeams = (e) => {
+    const team = e.target.parentElement.childNodes[0];
+    const img = team.childNodes[0];
+    const name = team.childNodes[1].textContent;
+
+    // 1. Make the visual changes
+    // e.target.parentElement.style.backgroundColor = '#005CFF';
+    // team.childNodes[1].style.color = '#fff'
+
+    // 2. Make the functional changes
+    const els = document.getElementById("q1").childNodes[0].childNodes[0];
+
+    matchUp.forEach((el) => {
+      el.forEach((el) => {
+        if (el.team === name) {
+          const imgs = document.createElement("img");
+          imgs.src = NED;
+          const p = document.createElement("p");
+          p.textContent = el.team;
+
+          els.appendChild(img);
+          els.appendChild(p);
+        }
+      });
+    });
+  };
+
   return (
     <div className="knockout">
       <div className="title">
@@ -52,10 +85,10 @@ function Knockout({ teams }) {
       </div>
 
       <div className="draws">
-        <div className="stages" id="roundof16">
+        <div className="stages">
           <h2>ROUND OF 16</h2>
 
-          <div className="stage">
+          <div className="stage" id="roundof16">
             {matchUp.map((el, i) => (
               <div className="boxx" key={i}>
                 <div className="boxContent" id="firstBox">
@@ -64,16 +97,16 @@ function Knockout({ teams }) {
                     <p>{el[0].team}</p>
                   </div>
 
-                  <button></button>
+                  <button onClick={logTeams}></button>
                 </div>
 
-                <div className="boxContent">
+                <div className="boxContent" id="secondBox">
                   <div className="teamName">
                     <img src={el[1].img} alt="flag" />
                     <p>{el[1].team}</p>
                   </div>
 
-                  <button></button>
+                  <button onClick={logTeams}></button>
                 </div>
               </div>
             ))}
@@ -88,75 +121,71 @@ function Knockout({ teams }) {
           <h2>QUARTER-FINALS</h2>
 
           <div className="stage" id="quarter">
-            <div className="boxx">
+            <div className="boxx" id="q1">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
-              <div className="boxContent">
-                <div className="teamName">
-                  <p></p>
-                </div>
+              <div className="boxContent" id="secondBox">
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
 
-            <div className="boxx">
+            <div className="boxx" id="q2">
               <div className="boxContent" id="firstBox">
                 <div className="teamName">
                   <p></p>
                 </div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
-              <div className="boxContent">
+              <div className="boxContent" id="secondBox">
                 <div className="teamName">
                   <p></p>
                 </div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
 
-            <div className="boxx">
+            <div className="boxx" id="q3">
               <div className="boxContent" id="firstBox">
                 <div className="teamName">
                   <p></p>
                 </div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
-              <div className="boxContent">
+              <div className="boxContent" id="secondBox">
                 <div className="teamName">
                   <p></p>
                 </div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
 
-            <div className="boxx">
+            <div className="boxx" id="q4">
               <div className="boxContent" id="firstBox">
                 <div className="teamName">
                   <p></p>
                 </div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
-              <div className="boxContent">
+              <div className="boxContent" id="secondBox">
                 <div className="teamName">
                   <p></p>
                 </div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
           </div>
@@ -203,30 +232,6 @@ function Knockout({ teams }) {
             </div>
           </div>
         </div>
-
-        {/* <div className="stages">
-          <h2>THIRD-PLACE</h2>
-
-          <div className="stage" id="third">
-            <div className="boxx">
-              <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p>Team Name</p>
-                </div>
-
-                <button></button>
-              </div>
-
-              <div className="boxContent">
-                <div className="teamName">
-                  <p>Team Name</p>
-                </div>
-
-                <button></button>
-              </div>
-            </div>
-          </div>
-        </div> */}
 
         <div className="stages">
           <h2>FINAL</h2>

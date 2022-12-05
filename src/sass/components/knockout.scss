@@ -4,11 +4,15 @@
   display: grid;
   grid-template-rows: 5% 95%;
 
+  @include respond(ultra) {
+    width: 140rem;
+    justify-self: center;
+  }
+
   .title {
     justify-self: center;
     height: 100%;
-    //width: 86%;
-    width: 90%;
+    width: 75%;
     display: grid;
     align-items: center;
 
@@ -20,12 +24,12 @@
   .draws {
     justify-self: center;
     height: auto;
-    width: 90%;
+    width: 75%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     .stages {
-      width: 90%;
+      width: 80%;
       border-top: 1px solid #000;
       display: grid;
       grid-template-rows: 5% 95%;
@@ -43,7 +47,6 @@
           position: relative;
           margin: 2rem 0;
           height: 159px;
-          // width: 90%;
           width: 230px;
           border-radius: 10px;
           box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
@@ -52,8 +55,8 @@
           grid-template-rows: repeat(2, 1fr);
 
           #firstBox {
-            width: 100%;
-            border-bottom: 0.1px solid #888888;
+            width: 105%;
+            border-bottom: 1px solid #888888;
           }
 
           .boxContent {
@@ -92,6 +95,15 @@
             }
           }
 
+          #firstBox {
+            border-top-right-radius: 10px;
+            border-top-left-radius: 10px;
+          }
+
+          #secondBox {
+            border-bottom-right-radius: 10px;
+            border-bottom-left-radius: 10px;
+          }
         }
 
         // #ver1 {
@@ -161,7 +173,6 @@
               }
             }
           }
-
         }
 
         // #ver1 {
@@ -232,7 +243,6 @@
               }
             }
           }
-
         }
 
         // #ver1 {
@@ -251,6 +261,7 @@
         grid-template-rows: 1fr;
 
         .boxx {
+          cursor: pointer;
           position: relative;
           height: 159px;
           width: 230px;
@@ -300,7 +311,6 @@
               }
             }
           }
-
         }
 
         // #ver1 {

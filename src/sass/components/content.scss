@@ -5,13 +5,17 @@
   grid-template-rows: 5% 95%;
 
   @include respond(phone) {
-    grid-template-rows: 2% 98%;
+    grid-template-rows: 4% 96%;
     height: 400rem;
   }
 
+  @include respond(tab) {
+    height: 210rem;
+  }
+
   @include respond(ultra) {
+    width: 140rem;
     justify-self: center;
-    width: 150rem;
   }
 
   .title {
@@ -23,6 +27,18 @@
 
     @include respond(phone) {
       width: 100%;
+    }
+
+    @include respond(tab) {
+      width: 90%;
+    }
+
+    @include respond(desk) {
+      width: 90%;
+    }
+
+    @include respond(ultra) {
+      width: 95%;
     }
 
     h1 {
@@ -53,7 +69,16 @@
     }
 
     @include respond(tab) {
+      width: 100%;
       grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include respond(desk) {
+      padding: 0px;
+    }
+
+    @include respond(ultra) {
+      width: 140rem;
     }
 
     .card {
@@ -61,18 +86,22 @@
       grid-template-rows: 35% 65%;
       height: 45rem;
       width: 90%;
-      border-radius: 10px;
+      border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
         rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
-        @include respond(phone) {
-          justify-self: center;
-          width: 95%;
-        }
+      @include respond(phone) {
+        justify-self: center;
+        width: 410px;
+      }
+
+      @include respond(tab) {
+        justify-self: center;
+      }
 
       .cardOne {
-        border-top-left-radius: 10px;
-        border-top-right-radius: 10px;
+        border-top-left-radius: 8px;
+        border-top-right-radius: 8px;
         display: grid;
         grid-template-rows: 1fr 1fr;
         background: #000;
@@ -98,7 +127,6 @@
             .flag {
               background-color: #fff;
               cursor: pointer;
-              //border: .1px solid #fff;
               height: 30px;
               width: 44px;
               border-radius: 3px;
@@ -109,8 +137,6 @@
               align-self: center;
               color: #fff;
               font-size: 1.5rem;
-              font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-                "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
             }
           }
         }
@@ -161,7 +187,6 @@
             .parastyle {
               margin: 0 1rem;
               color: #000;
-              font-family: monospace, sans-serif;
               font-size: 2rem;
             }
           }
