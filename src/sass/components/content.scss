@@ -1,5 +1,5 @@
 .content {
-  min-height: 150rem;
+  min-height: 200rem;
   max-height: auto;
   display: grid;
   grid-template-rows: 5% 95%;
@@ -10,7 +10,7 @@
   }
 
   @include respond(tab) {
-    height: 210rem;
+    height: 250rem;
   }
 
   @include respond(ultra) {
@@ -84,7 +84,7 @@
     .card {
       display: grid;
       grid-template-rows: 35% 65%;
-      height: 45rem;
+      height: 55rem;
       width: 90%;
       border-radius: 8px;
       box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px,
@@ -182,7 +182,7 @@
               background-color: #d4d4d4;
 
               @include respond(phone) {
-                margin-left: -1.8rem;
+                margin: -.8rem;
               }
 
               .flagstyle {
