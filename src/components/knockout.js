@@ -1,6 +1,7 @@
 function Knockout({ teams }) {
   const matchUp = []; // Round of 16
   console.log(matchUp);
+  console.log(teams)
 
   function compare(a, b) {
     if (a.group < b.group) {

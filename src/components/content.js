@@ -76,7 +76,6 @@ const allFlags = {
 
 let groupStage = 0;
 
-
 function Content({ setroundOne, setroundTwo, teams, setTeams }) {
   // This function deals with all the dom manipulation.
   const pickTeams = (e) => {
@@ -206,7 +205,9 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -215,7 +216,9 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -224,7 +227,9 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -233,7 +238,9 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -286,13 +293,16 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
           </div>
 
           <div className="cardTwo">
-            <div className="first box">
+            <div className="first box" draggable={true}>
               <div className="list">
                 <p>1</p>
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -301,7 +311,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -310,7 +323,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -319,7 +335,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -378,7 +397,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -387,7 +409,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -396,7 +421,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -405,7 +433,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -464,7 +495,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -473,7 +507,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -482,7 +519,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -491,7 +531,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -550,7 +593,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -559,7 +605,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -568,7 +617,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -577,7 +629,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -636,7 +691,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -645,7 +703,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -654,7 +715,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -663,7 +727,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -722,7 +789,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -731,7 +801,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -740,7 +813,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -749,7 +825,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
@@ -808,7 +887,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="second box">
@@ -817,7 +899,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="third box">
@@ -826,7 +911,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
 
             <div className="fourth box">
@@ -835,7 +923,10 @@ function Content({ setroundOne, setroundTwo, teams, setTeams }) {
                 <span></span>
               </div>
 
-              <div className="choice"></div>
+              <div className="choice">
+                {" "}
+                <div className="draggable"></div>
+              </div>
             </div>
           </div>
         </div>
