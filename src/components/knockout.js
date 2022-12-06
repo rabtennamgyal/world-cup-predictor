@@ -1,5 +1,3 @@
-import NED from "../assets/flags/holland.svg";
-
 function Knockout({ teams }) {
   const matchUp = []; // Round of 16
   console.log(matchUp);
@@ -47,32 +45,43 @@ function Knockout({ teams }) {
 
   fixMatchUp();
 
-  // const quarter = []; // quarter
-  // const semi = []; // semi
-  // const final = []; // final
+  let cur = 1; // sets the qs
+  let nodes = 0; // sets the teams
 
   const logTeams = (e) => {
     const team = e.target.parentElement.childNodes[0];
     const img = team.childNodes[0];
     const name = team.childNodes[1].textContent;
 
+    if (cur === 8) {
+      console.log(`${name} is World Champion 🏆`);
+      return;
+    }
+
     // 1. Make the visual changes
-    // e.target.parentElement.style.backgroundColor = '#005CFF';
-    // team.childNodes[1].style.color = '#fff'
+    e.target.parentElement.style.backgroundColor = "#005CFF";
+    team.childNodes[1].style.color = "#fff";
 
     // 2. Make the functional changes
-    const els = document.getElementById("q1").childNodes[0].childNodes[0];
+    const els = document.getElementById(`q${cur}`).childNodes[nodes]
+      .childNodes[0];
 
     matchUp.forEach((el) => {
       el.forEach((el) => {
-        if (el.team === name) {
-          const imgs = document.createElement("img");
-          imgs.src = NED;
+        if (el.code === name) {
+          const imgs = img.cloneNode(true);
           const p = document.createElement("p");
-          p.textContent = el.team;
+          p.textContent = el.code;
 
-          els.appendChild(img);
+          els.appendChild(imgs);
           els.appendChild(p);
+
+          if (nodes === 0) {
+            nodes = 1;
+          } else if (nodes === 1) {
+            nodes = 0;
+            cur++;
+          }
         }
       });
     });
@@ -94,7 +103,7 @@ function Knockout({ teams }) {
                 <div className="boxContent" id="firstBox">
                   <div className="teamName">
                     <img src={el[0].img} alt="flag" />
-                    <p>{el[0].team}</p>
+                    <p>{el[0].code}</p>
                   </div>
 
                   <button onClick={logTeams}></button>
@@ -103,7 +112,7 @@ function Knockout({ teams }) {
                 <div className="boxContent" id="secondBox">
                   <div className="teamName">
                     <img src={el[1].img} alt="flag" />
-                    <p>{el[1].team}</p>
+                    <p>{el[1].code}</p>
                   </div>
 
                   <button onClick={logTeams}></button>
@@ -137,17 +146,13 @@ function Knockout({ teams }) {
 
             <div className="boxx" id="q2">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
                 <button onClick={logTeams}></button>
               </div>
 
               <div className="boxContent" id="secondBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
                 <button onClick={logTeams}></button>
               </div>
@@ -155,17 +160,13 @@ function Knockout({ teams }) {
 
             <div className="boxx" id="q3">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
                 <button onClick={logTeams}></button>
               </div>
 
               <div className="boxContent" id="secondBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
                 <button onClick={logTeams}></button>
               </div>
@@ -173,17 +174,13 @@ function Knockout({ teams }) {
 
             <div className="boxx" id="q4">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
                 <button onClick={logTeams}></button>
               </div>
 
               <div className="boxContent" id="secondBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
                 <button onClick={logTeams}></button>
               </div>
@@ -195,39 +192,31 @@ function Knockout({ teams }) {
           <h2>SEMI-FINALS</h2>
 
           <div className="stage" id="semi">
-            <div className="boxx">
+            <div className="boxx" id="q5">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
               <div className="boxContent">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
 
-            <div className="boxx">
+            <div className="boxx" id="q6">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
               <div className="boxContent">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
           </div>
@@ -237,21 +226,17 @@ function Knockout({ teams }) {
           <h2>FINAL</h2>
 
           <div className="stage" id="final">
-            <div className="boxx">
+            <div className="boxx" id="q7">
               <div className="boxContent" id="firstBox">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button onClick={logTeams}></button>
               </div>
 
               <div className="boxContent">
-                <div className="teamName">
-                  <p></p>
-                </div>
+                <div className="teamName"></div>
 
-                <button></button>
+                <button  onClick={logTeams}></button>
               </div>
             </div>
           </div>
