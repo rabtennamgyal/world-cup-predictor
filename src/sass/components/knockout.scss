@@ -1,5 +1,5 @@
 .knockout {
-  min-height: 180rem;
+  min-height: 200rem;
   max-height: auto;
   display: grid;
   grid-template-rows: 5% 95%;
@@ -16,8 +16,21 @@
     display: grid;
     align-items: center;
 
+    @include respond(phone) {
+      width: 95%;
+    }
+
+    @include respond(tab) {
+      width: 98%;
+      border: 0.1px solid red;
+    }
+
     h1 {
       font-size: 2rem;
+
+      @include respond(phone) {
+        font-size: 3rem;
+      }
     }
   }
 
@@ -28,20 +41,44 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
+    @include respond(phone) {
+      //border: .1px solid red;
+      width: 95%;
+      overflow: hidden;
+    }
+
+    @include respond(tab) {
+      border: 0.1px solid red;
+      width: 98%;
+    }
+
     .stages {
       width: 80%;
       border-top: 1px solid #000;
       display: grid;
       grid-template-rows: 5% 95%;
 
+      @include respond(phone) {
+        width: 93vw; // change later if need be.
+      }
+
       h2 {
         margin-top: 1.3rem;
         font-size: 2.3rem;
+
+        @include respond(phone) {
+          margin: 1rem 0;
+          font-size: 3rem;
+        }
       }
 
       .stage {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
+
+        @include respond(phone) {
+          width: 98%;
+        }
 
         .boxx {
           position: relative;
@@ -54,8 +91,12 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
+          @include respond(phone) {
+            width: 100%;
+          }
+
           #firstBox {
-            width: 105%;
+            width: 100%;
             border-bottom: 1px solid #888888;
           }
 
@@ -123,6 +164,10 @@
         flex-direction: column;
         justify-content: space-between;
 
+        @include respond(phone) {
+          width: 98%;
+        }
+
         .boxx {
           position: relative;
           height: 159px;
@@ -132,6 +177,10 @@
             rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
           display: grid;
           grid-template-rows: repeat(2, 1fr);
+
+          @include respond(phone) {
+            width: 100%;
+          }
 
           #firstBox {
             width: 100%;
@@ -193,6 +242,10 @@
         grid-template-rows: repeat(2, 1fr);
         height: 60%;
 
+        @include respond(phone) {
+          width: 98%;
+        }
+
         .boxx {
           position: relative;
           height: 159px;
@@ -202,6 +255,10 @@
             rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
           display: grid;
           grid-template-rows: repeat(2, 1fr);
+
+          @include respond(phone) {
+            width: 100%;
+          }
 
           #firstBox {
             width: 100%;
@@ -260,6 +317,10 @@
         display: grid;
         grid-template-rows: 1fr;
 
+        @include respond(phone) {
+          width: 98%;
+        }
+
         .boxx {
           cursor: pointer;
           position: relative;
@@ -270,6 +331,10 @@
             rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
           display: grid;
           grid-template-rows: repeat(2, 1fr);
+
+          @include respond(phone) {
+            width: 100%;
+          }
 
           #firstBox {
             width: 100%;
