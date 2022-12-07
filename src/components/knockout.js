@@ -1,7 +1,16 @@
+import { useRef } from "react";
+
 function Knockout({ teams }) {
+  const a = useRef();
+  const b = useRef();
+  const c = useRef();
+  const d = useRef();
+
+  const arr = [a, b, c, d];
+  let curRef = 0;
+  let max = arr.length * 2;
+
   const matchUp = []; // Round of 16
-  console.log(matchUp);
-  console.log(teams)
 
   function compare(a, b) {
     if (a.group < b.group) {
@@ -88,14 +97,29 @@ function Knockout({ teams }) {
     });
   };
 
+  function slideLeft() {
+    if (curRef === max - 2) {
+      curRef = 0;
+    } else {
+      curRef++;
+      curRef++;
+    };
+
+    console.log('sliding');
+
+    arr.forEach((el, i) => {
+      el.current.style.transform = `translateX(${100 * (i - curRef)}%)`;
+    });
+  }
+
   return (
     <div className="knockout">
       <div className="title">
         <h1>MAKE YOUR WORLD CUP PREDICTIONS</h1>
       </div>
 
-      <div className="draws">
-        <div className="stages">
+      <div className="draws" onClick={slideLeft}>
+        <div className="stages" ref={a}>
           <h2>ROUND OF 16</h2>
 
           <div className="stage" id="roundof16">
@@ -127,7 +151,7 @@ function Knockout({ teams }) {
           </div>
         </div>
 
-        <div className="stages">
+        <div className="stages" ref={b}>
           <h2>QUARTER-FINALS</h2>
 
           <div className="stage" id="quarter">
@@ -189,7 +213,7 @@ function Knockout({ teams }) {
           </div>
         </div>
 
-        <div className="stages">
+        <div className="stages" ref={c}>
           <h2>SEMI-FINALS</h2>
 
           <div className="stage" id="semi">
@@ -223,7 +247,7 @@ function Knockout({ teams }) {
           </div>
         </div>
 
-        <div className="stages">
+        <div className="stages" ref={d}>
           <h2>FINAL</h2>
 
           <div className="stage" id="final">
@@ -237,7 +261,7 @@ function Knockout({ teams }) {
               <div className="boxContent">
                 <div className="teamName"></div>
 
-                <button  onClick={logTeams}></button>
+                <button onClick={logTeams}></button>
               </div>
             </div>
           </div>
