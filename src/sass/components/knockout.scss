@@ -4,6 +4,10 @@
   display: grid;
   grid-template-rows: 5% 95%;
 
+  @include respond(phone) {
+    grid-template-rows: 5% 5% 90%;
+  }
+
   @include respond(ultra) {
     width: 140rem;
     justify-self: center;
@@ -22,7 +26,6 @@
 
     @include respond(tab) {
       width: 98%;
-      border: 0.1px solid red;
     }
 
     h1 {
@@ -30,6 +33,33 @@
 
       @include respond(phone) {
         font-size: 3rem;
+      }
+    }
+  }
+
+  .btns {
+    display: none;
+
+    @include respond(phone) {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+    }
+
+    .btn {
+      cursor: pointer;
+      margin: 0 1rem;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      font-size: 2rem;
+      font-weight: 600;
+
+      &:hover {
+        transition: 1s;
+        color: #ffffff;
+        background-color: #000;
       }
     }
   }
@@ -48,7 +78,6 @@
     }
 
     @include respond(tab) {
-      //border: 0.1px solid red;
       width: 98%;
     }
 
@@ -173,7 +202,9 @@
         justify-content: space-between;
 
         @include respond(phone) {
+          // border: solid red;
           width: 99%;
+          // justify-content: start;
         }
 
         .boxx {
@@ -188,8 +219,9 @@
           grid-template-rows: repeat(2, 1fr);
 
           @include respond(phone) {
-            margin: 0 0 0 1px;
-            width: 99%;
+            // margin: 0 0 0 1px;
+            margin: 2rem 1rem;
+            width: 95%;
           }
 
           #firstBox {
@@ -267,7 +299,8 @@
         height: 60%;
 
         @include respond(phone) {
-          width: 98%;
+          width: 99%;
+          // justify-content: start;
         }
 
         .boxx {
@@ -281,8 +314,8 @@
           grid-template-rows: repeat(2, 1fr);
 
           @include respond(phone) {
-            margin: 0 0 0 1px;
-            width: 99%;
+            margin: 2rem 1rem;
+            width: 95%;
           }
 
           #firstBox {
@@ -441,6 +474,14 @@
         //   border: .1px solid #888888;
         // }
       }
+    }
+
+    #quar {
+      height: 907px;
+    }
+
+    #semi {
+      height: 620px;
     }
   }
 }

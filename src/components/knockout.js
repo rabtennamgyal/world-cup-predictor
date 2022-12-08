@@ -97,7 +97,7 @@ function Knockout({ teams }) {
     });
   };
 
-  function slideLeft() {
+  function slideLeft(e) {
     if (curRef === max - 2) {
       curRef = 0;
     } else {
@@ -105,7 +105,13 @@ function Knockout({ teams }) {
       curRef++;
     };
 
-    console.log('sliding');
+    let curpage = e.target.parentElement.parentElement;
+    let x = curpage.getAttribute('id');
+    let curheight = curpage.offsetHeight;
+    curpage.style.height = `${curheight - 100}px`;
+
+
+    console.log(x)
 
     arr.forEach((el, i) => {
       el.current.style.transform = `translateX(${100 * (i - curRef)}%)`;
@@ -118,8 +124,13 @@ function Knockout({ teams }) {
         <h1>MAKE YOUR WORLD CUP PREDICTIONS</h1>
       </div>
 
-      <div className="draws" onClick={slideLeft}>
-        <div className="stages" ref={a}>
+      <div className="btns">
+        <button className="btn" id="left">&larr;</button>
+        <button className="btn" id="right" onClick={slideLeft}>&rarr;</button>
+      </div>
+
+      <div className="draws">
+        <div className="stages" id='six' ref={a}>
           <h2>ROUND OF 16</h2>
 
           <div className="stage" id="roundof16">
@@ -151,7 +162,7 @@ function Knockout({ teams }) {
           </div>
         </div>
 
-        <div className="stages" ref={b}>
+        <div className="stages" id='quar' ref={b}>
           <h2>QUARTER-FINALS</h2>
 
           <div className="stage" id="quarter">
@@ -213,7 +224,7 @@ function Knockout({ teams }) {
           </div>
         </div>
 
-        <div className="stages" ref={c}>
+        <div className="stages" id='semi' ref={c}>
           <h2>SEMI-FINALS</h2>
 
           <div className="stage" id="semi">
@@ -247,7 +258,7 @@ function Knockout({ teams }) {
           </div>
         </div>
 
-        <div className="stages" ref={d}>
+        <div className="stages" id='final' ref={d}>
           <h2>FINAL</h2>
 
           <div className="stage" id="final">
