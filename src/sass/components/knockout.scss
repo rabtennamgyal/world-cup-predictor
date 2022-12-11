@@ -138,6 +138,10 @@
             width: 95%;
           }
 
+          @include respond(tab) {
+            width: 90%;
+          }
+
           #firstBox {
             width: 100%;
             border-bottom: 0.1px solid #888888;
@@ -357,9 +361,8 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
-          @include respond(phone) {
-            margin: 2rem 1rem;
-            width: 95%;
+          @include respond(tab) {
+            width: 90%;
           }
 
           #firstBox {
@@ -515,9 +518,8 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
-          @include respond(phone) {
-            margin: 2rem 1rem;
-            width: 95%;
+          @include respond(tab) {
+            width: 90%;
           }
 
           #firstBox {
@@ -631,6 +633,10 @@
           width: 98%;
         }
 
+        @include respond(tab) {
+          width: 90%;
+        }
+
         .boxx {
           cursor: pointer;
           position: relative;
@@ -642,9 +648,9 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
-          @include respond(phone) {
-            margin: 0 0 0 1px;
-            width: 99%;
+
+          @include respond(tab) {
+            width: 90%;
           }
 
           #firstBox {
