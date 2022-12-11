@@ -2,7 +2,7 @@
   min-height: 200rem;
   max-height: auto;
   display: grid;
-  grid-template-rows: 5% 95%;
+  grid-template-rows: 7% 93%;
 
   @include respond(phone) {
     grid-template-rows: 5% 5% 90%;
@@ -16,12 +16,16 @@
   .title {
     justify-self: center;
     height: 100%;
-    width: 75%;
+    width: 100%;
     display: grid;
-    align-items: center;
+    margin-top: 2rem;
 
     @include respond(phone) {
       width: 95%;
+    }
+
+    @include respond(desk) {
+      width: 90%;
     }
 
     @include respond(tab) {
@@ -29,7 +33,7 @@
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: 4rem;
 
       @include respond(phone) {
         font-size: 3rem;
@@ -65,16 +69,19 @@
   }
 
   .draws {
+    height: 1900px;
     justify-self: center;
-    height: auto;
-    width: 75%;
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
 
     @include respond(phone) {
       width: 95%;
       overflow: hidden;
-      //position: relative;
+    }
+
+    @include respond(desk) {
+      width: 90%;
     }
 
     @include respond(tab) {
@@ -82,7 +89,8 @@
     }
 
     .stages {
-      width: 80%;
+      position: relative;
+      width: 100%;
       border-top: 1px solid #000;
       display: grid;
       grid-template-rows: 5% 95%;
@@ -90,12 +98,15 @@
       @include respond(phone) {
         width: 93vw; // change later if need be.
         transition: 0.7s ease-in-out;
-        // position: absolute;
+      }
+
+      @include respond(tab) {
+        transition: 0.7s ease-in-out;
       }
 
       h2 {
         margin-top: 1.3rem;
-        font-size: 2.3rem;
+        font-size: 3rem;
 
         @include respond(phone) {
           margin: 1rem 0;
@@ -106,16 +117,16 @@
       .stage {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
+        width: 90%;
 
         @include respond(phone) {
           width: 99%;
         }
 
         .boxx {
-          position: relative;
           margin: 2rem 0;
-          height: 170px;
-          width: 230px;
+          height: 180px;
+          width: 90%;
           border-radius: 10px;
           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -123,9 +134,8 @@
           grid-template-rows: repeat(2, 1fr);
 
           @include respond(phone) {
-            margin: 0;
-            width: 99%;
-            justify-self: center;
+            margin: 0 0.5rem;
+            width: 95%;
           }
 
           #firstBox {
@@ -145,12 +155,12 @@
 
               img {
                 margin: 0 2rem 0 2rem;
-                height: 20px;
-                width: 30px;
+                height: 23px;
+                width: 33px;
               }
 
               p {
-                font-size: 1.7rem;
+                font-size: 2rem;
                 font-weight: 600;
               }
             }
@@ -161,7 +171,7 @@
               border-radius: 50rem;
               height: 2rem;
               width: 2rem;
-              left: 85%;
+              left: 70%;
 
               @include respond(phone) {
                 left: 90%;
@@ -184,34 +194,163 @@
           }
         }
 
-        // #ver1 {
-        //   top: 37.5rem;
-        //   left: 23%;
-        //   position: absolute;
-        //   height: 20rem;
-        //   width: 1px;
-        //   border: .1px solid #888888;
-        // }
+        #ver1 {
+          top: 20.3rem;
+          left: 90%;
+          position: absolute;
+          height: 12%;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.2rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 100%;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 48%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+        }
+
+        #ver2 {
+          position: absolute;
+          top: 65.5rem;
+          left: 90%;
+          height: 12%;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.2rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 100%;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 49%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+        }
+
+        #ver3 {
+          position: absolute;
+          top: 110.5rem;
+          left: 90%;
+          height: 12%;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.2rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 100%;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 52%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+        }
+
+        #ver4 {
+          position: absolute;
+          top: 155.5rem;
+          left: 90%;
+          height: 12%;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.2rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 100%;
+            left: -33px;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 54%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+        }
       }
 
       #quarter {
         align-self: center;
-        height: 85%;
+        height: 88%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
 
-        @include respond(phone) {
-          // border: solid red;
-          width: 99%;
-          // justify-content: start;
-        }
-
         .boxx {
           position: relative;
           margin: 2rem 0;
-          height: 170px;
-          width: 230px;
+          height: 180px;
+          width: 270px;
           border-radius: 10px;
           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -219,7 +358,6 @@
           grid-template-rows: repeat(2, 1fr);
 
           @include respond(phone) {
-            // margin: 0 0 0 1px;
             margin: 2rem 1rem;
             width: 95%;
           }
@@ -246,7 +384,7 @@
               }
 
               p {
-                font-size: 1.7rem;
+                font-size: 2rem;
                 font-weight: 600;
               }
             }
@@ -270,6 +408,79 @@
           }
         }
 
+        #ver5 {
+          top: 31.2rem;
+          left: 90%;
+          position: absolute;
+          height: 45.9rem;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -48px;
+            position: absolute;
+            height: 1px;
+            width: 4.8rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 99.8%;
+            left: -48px;
+            position: absolute;
+            height: 1px;
+            width: 4.8rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 55%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+        }
+
+        #ver6 {
+          top: 122.4rem;
+          left: 90%;
+          left: 90%;
+          position: absolute;
+          height: 45.9rem;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -48px;
+            position: absolute;
+            height: 1px;
+            width: 4.8rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 99.8%;
+            left: -48px;
+            position: absolute;
+            height: 1px;
+            width: 4.8rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 44%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
+          }
+        }
+
         #firstBox {
           border-top-right-radius: 10px;
           border-top-left-radius: 10px;
@@ -279,24 +490,15 @@
           border-bottom-right-radius: 10px;
           border-bottom-left-radius: 10px;
         }
-
-        // #ver1 {
-        //   top: 37.5rem;
-        //   left: 23%;
-        //   position: absolute;
-        //   height: 20rem;
-        //   width: 1px;
-        //   border: .1px solid #888888;
-        // }
       }
 
       #semi {
         align-self: center;
+        height: 60%;
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         grid-template-rows: repeat(2, 1fr);
-        height: 60%;
 
         @include respond(phone) {
           width: 99%;
@@ -305,8 +507,8 @@
 
         .boxx {
           position: relative;
-          height: 170px;
-          width: 230px;
+          height: 180px;
+          width: 270px;
           border-radius: 10px;
           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -340,7 +542,7 @@
               }
 
               p {
-                font-size: 1.7rem;
+                font-size: 2rem;
                 font-weight: 600;
               }
             }
@@ -361,6 +563,42 @@
                 background: #000000;
               }
             }
+          }
+        }
+
+        #ver7 {
+          top: 56.5rem;
+          left: 90%;
+          position: absolute;
+          height: 86.6rem;
+          width: 1px;
+          border: 1px solid #888888;
+
+          .hor1 {
+            top: -2px;
+            left: -48px;
+            position: absolute;
+            height: 1px;
+            width: 4.8rem;
+            border: 1px solid #888888;
+          }
+
+          .hor2 {
+            top: 99.8%;
+            left: -48px;
+            position: absolute;
+            height: 1px;
+            width: 4.8rem;
+            border: 1px solid #888888;
+          }
+
+          .mid {
+            top: 49.6%;
+            left: 10%;
+            position: absolute;
+            height: 1px;
+            width: 3.3rem;
+            border: 1px solid #888888;
           }
         }
 
@@ -396,8 +634,8 @@
         .boxx {
           cursor: pointer;
           position: relative;
-          height: 170px;
-          width: 230px;
+          height: 180px;
+          width: 270px;
           border-radius: 10px;
           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
@@ -431,7 +669,7 @@
               }
 
               p {
-                font-size: 1.7rem;
+                font-size: 2rem;
                 font-weight: 600;
               }
             }
@@ -464,24 +702,7 @@
           border-bottom-right-radius: 10px;
           border-bottom-left-radius: 10px;
         }
-
-        // #ver1 {
-        //   top: 37.5rem;
-        //   left: 23%;
-        //   position: absolute;
-        //   height: 20rem;
-        //   width: 1px;
-        //   border: .1px solid #888888;
-        // }
       }
-    }
-
-    #quar {
-      height: 907px;
-    }
-
-    #semi {
-      height: 620px;
     }
   }
 }

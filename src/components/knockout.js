@@ -103,20 +103,26 @@ function Knockout({ teams }) {
     } else {
       curRef++;
       curRef++;
-    };
-
-    let curpage = e.target.parentElement.parentElement;
-    let x = curpage.getAttribute('id');
-    let curheight = curpage.offsetHeight;
-    curpage.style.height = `${curheight - 100}px`;
-
-
-    console.log(x)
+    }
 
     arr.forEach((el, i) => {
       el.current.style.transform = `translateX(${100 * (i - curRef)}%)`;
     });
   }
+
+  // let viewportWidth = window.innerWidth;
+
+  // console.log(viewportWidth)
+
+  // function resetCar() {
+  //   if (viewportWidth > 1500) {
+  //     arr.forEach((el, i) => {
+  //       el.current.style.transform = `translateX(${0}%)`;
+  //     });
+  //   }
+  // }
+
+  // window.addEventListener("resize", resetCar);
 
   return (
     <div className="knockout">
@@ -125,12 +131,16 @@ function Knockout({ teams }) {
       </div>
 
       <div className="btns">
-        <button className="btn" id="left">&larr;</button>
-        <button className="btn" id="right" onClick={slideLeft}>&rarr;</button>
+        <button className="btn" id="left">
+          &larr;
+        </button>
+        <button className="btn" id="right" onClick={slideLeft}>
+          &rarr;
+        </button>
       </div>
 
       <div className="draws">
-        <div className="stages" id='six' ref={a}>
+        <div className="stages" id="six" ref={a}>
           <h2>ROUND OF 16</h2>
 
           <div className="stage" id="roundof16">
@@ -155,14 +165,33 @@ function Knockout({ teams }) {
                 </div>
               </div>
             ))}
-            {/* <span id='ver1'></span>
-            <span id='ver2'></span>
-            <span id='ver3'></span>
-            <span id='ver4'></span> */}
+            <span id="ver1">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span>
+
+            <span id="ver2">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span>
+
+            <span id="ver3">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span>
+
+            <span id="ver4">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span> 
           </div>
         </div>
 
-        <div className="stages" id='quar' ref={b}>
+        <div className="stages" id="quar" ref={b}>
           <h2>QUARTER-FINALS</h2>
 
           <div className="stage" id="quarter">
@@ -221,10 +250,22 @@ function Knockout({ teams }) {
                 <button onClick={logTeams}></button>
               </div>
             </div>
+
+            <span id="ver5">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span>
+
+            <span id="ver6">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span>
           </div>
         </div>
 
-        <div className="stages" id='semi' ref={c}>
+        <div className="stages" id="semi" ref={c}>
           <h2>SEMI-FINALS</h2>
 
           <div className="stage" id="semi">
@@ -255,10 +296,16 @@ function Knockout({ teams }) {
                 <button onClick={logTeams}></button>
               </div>
             </div>
+
+            <span id="ver7">
+              <span className="hor1"></span>
+              <span className="hor2"></span>
+              <span className="mid"></span>
+            </span>
           </div>
         </div>
 
-        <div className="stages" id='final' ref={d}>
+        <div className="stages" id="final" ref={d}>
           <h2>FINAL</h2>
 
           <div className="stage" id="final">

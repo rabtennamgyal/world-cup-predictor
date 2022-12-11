@@ -1,14 +1,24 @@
 .App {
-  min-height: 100vh;
+  min-height: 210vh;
   max-height: auto;
   display: grid;
   grid-template-rows: 5% 95%;
 
   @include respond(phone) {
     grid-template-rows: 4% 96%;
+    border: 0.1px solid red;
   }
 
-  @include respond(ultra) {
-    height: 180rem;
-  }
+  // @include respond(tab) {
+  //   border: 0.1px solid #e5ff00;
+  // }
+
+  // @include respond(desk) {
+  //   border: 0.1px solid #15ff00;
+  // }
+
+  // @include respond(ultra) {
+  //   height: 180rem;
+  //   border: 0.1px solid #00ffff;
+  // }
 }
