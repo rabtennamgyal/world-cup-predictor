@@ -59,6 +59,8 @@ function Knockout({ teams }) {
   let nodes = 0; // sets the teams
 
   const logTeams = (e) => {
+    console.log(matchUp)
+
     const team = e.target.parentElement.childNodes[0];
     const img = team.childNodes[0];
     const name = team.childNodes[1].textContent;
@@ -110,19 +112,25 @@ function Knockout({ teams }) {
     });
   }
 
+  // setInterval(() => {
+    
   // let viewportWidth = window.innerWidth;
 
-  // console.log(viewportWidth)
 
   // function resetCar() {
   //   if (viewportWidth > 1500) {
   //     arr.forEach((el, i) => {
   //       el.current.style.transform = `translateX(${0}%)`;
   //     });
+
+  //     console.log(
+  //       'ues'
+  //     )
   //   }
   // }
 
   // window.addEventListener("resize", resetCar);
+  // })
 
   return (
     <div className="knockout">

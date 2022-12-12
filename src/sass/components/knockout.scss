@@ -112,18 +112,24 @@
           margin: 1rem 0;
           font-size: 3rem;
         }
+
+        @include respond(tab) {
+          font-size: 2rem;
+        }
       }
 
       .stage {
         display: grid;
         grid-template-rows: repeat(8, 1fr);
         width: 90%;
+        transform: translateX(0%);
 
         @include respond(phone) {
           width: 99%;
         }
 
         .boxx {
+          background: #fff;
           margin: 2rem 0;
           height: 180px;
           width: 90%;
@@ -199,12 +205,20 @@
         }
 
         #ver1 {
-          top: 20.3rem;
-          left: 90%;
+          z-index: -100;
+          // top: 20.3rem;
+          // left: 90%;
+          top: 11rem;
+          left: 100%;
           position: absolute;
-          height: 12%;
+          height: 12.5%;
           width: 1px;
           border: 1px solid #888888;
+
+          @include respond(phone) {
+            top: 8.9rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -213,6 +227,7 @@
             height: 1px;
             width: 3.2rem;
             border: 1px solid #888888;
+            overflow: hidden;
           }
 
           .hor2 {
@@ -235,12 +250,22 @@
         }
 
         #ver2 {
+          z-index: -100;
+          // top: 65.5rem;
+          // left: 90%;
+          // height: 12%;
+          top: 56rem;
+          left: 100%;
           position: absolute;
-          top: 65.5rem;
-          left: 90%;
-          height: 12%;
+          height: 12.5%;
           width: 1px;
           border: 1px solid #888888;
+
+
+          @include respond(phone) {
+            top: 54rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -271,12 +296,19 @@
         }
 
         #ver3 {
+          z-index: -100;
           position: absolute;
-          top: 110.5rem;
-          left: 90%;
-          height: 12%;
+          top: 101rem;
+          left: 100%;
+          position: absolute;
+          height: 12.5%;
           width: 1px;
           border: 1px solid #888888;
+
+          @include respond(phone) {
+            top: 99.1rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -307,12 +339,19 @@
         }
 
         #ver4 {
+          z-index: -100;
           position: absolute;
-          top: 155.5rem;
-          left: 90%;
-          height: 12%;
+          top: 146.3rem;
+          left: 100%;
+          position: absolute;
+          height: 12.5%;
           width: 1px;
           border: 1px solid #888888;
+
+          @include respond(phone) {
+            top: 144rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -349,8 +388,14 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        transform: translateX(0%);
+
+        @include respond(phone) {
+          width: 99%;
+        }
 
         .boxx {
+          background: #fff;
           position: relative;
           margin: 2rem 0;
           height: 180px;
@@ -360,6 +405,11 @@
             rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
           display: grid;
           grid-template-rows: repeat(2, 1fr);
+
+          @include respond(phone) {
+            margin: 0 0.5rem;
+            width: 95%;
+          }
 
           @include respond(tab) {
             width: 90%;
@@ -412,12 +462,19 @@
         }
 
         #ver5 {
-          top: 31.2rem;
-          left: 90%;
+          z-index: -100;
+          top: 11rem;
+          left: 100%;
           position: absolute;
           height: 45.9rem;
           width: 1px;
           border: 1px solid #888888;
+
+          @include respond(phone) {
+            top: 8.9rem;
+            height: 46.9rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -448,13 +505,19 @@
         }
 
         #ver6 {
-          top: 122.4rem;
-          left: 90%;
-          left: 90%;
+          z-index: -100;
+          top: 101.9rem;
+          left: 100%;
           position: absolute;
           height: 45.9rem;
           width: 1px;
           border: 1px solid #888888;
+
+          @include respond(phone) {
+            top: 102.8rem;
+            height: 47rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -505,10 +568,10 @@
 
         @include respond(phone) {
           width: 99%;
-          // justify-content: start;
         }
 
         .boxx {
+          background: #fff;
           position: relative;
           height: 180px;
           width: 270px;
@@ -518,9 +581,14 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
+          @include respond(phone) {
+            margin: 0 0.5rem;
+            width: 95%;
+          }
+
           @include respond(tab) {
             width: 90%;
-          }
+          } 
 
           #firstBox {
             width: 100%;
@@ -569,12 +637,19 @@
         }
 
         #ver7 {
-          top: 56.5rem;
-          left: 90%;
+          z-index: -100;
+          top: 11rem;
+          left: 100%;
           position: absolute;
-          height: 86.6rem;
+          height: 86.3rem;
           width: 1px;
           border: 1px solid #888888;
+
+          @include respond(phone) {
+            top: 9.3rem;
+            height: 90.6rem;
+            left: 97%;
+          }
 
           .hor1 {
             top: -2px;
@@ -613,28 +688,16 @@
           border-bottom-right-radius: 10px;
           border-bottom-left-radius: 10px;
         }
-
-        // #ver1 {
-        //   top: 37.5rem;
-        //   left: 23%;
-        //   position: absolute;
-        //   height: 20rem;
-        //   width: 1px;
-        //   border: .1px solid #888888;
-        // }
       }
 
       #final {
         align-self: center;
         display: grid;
         grid-template-rows: 1fr;
+        // transform: translateX(0%);
 
         @include respond(phone) {
-          width: 98%;
-        }
-
-        @include respond(tab) {
-          width: 90%;
+          width: 99%;
         }
 
         .boxx {
@@ -648,6 +711,10 @@
           display: grid;
           grid-template-rows: repeat(2, 1fr);
 
+          @include respond(phone) {
+            margin: 0 0.5rem;
+            width: 95%;
+          }
 
           @include respond(tab) {
             width: 90%;

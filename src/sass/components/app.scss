@@ -6,19 +6,19 @@
 
   @include respond(phone) {
     grid-template-rows: 4% 96%;
-    border: 1px solid red;
+   //  border: 1px solid #ff0000;
   }
 
-  @include respond(tab) {
-    border: 1px solid #e5ff00;
-  }
+  // @include respond(tab) {
+  //   border: 1px solid #e5ff00;
+  // }
 
-  @include respond(desk) {
-    border: 1px solid #15ff00;
-  }
+  // @include respond(desk) {
+  //   border: 1px solid #15ff00;
+  // }
 
-  @include respond(ultra) {
-    height: 180rem;
-    border: 1px solid #00ffff;
-  }
+  // @include respond(ultra) {
+  //   height: 180rem;
+  //   border: 1px solid #00ffff;
+  // }
 }

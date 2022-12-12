@@ -4,7 +4,7 @@
 ### Design
 ### 1. work on responsive design at the end.
 ### 2. work on line path of phone 
-
+### 3. work on the aftermath of carousal in phone layout
 
 
 ### Logic
