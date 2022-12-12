@@ -78,6 +78,7 @@
     @include respond(phone) {
       width: 95%;
       overflow: hidden;
+      // border: solid red;
     }
 
     @include respond(desk) {
@@ -260,7 +261,6 @@
           height: 12.5%;
           width: 1px;
           border: 1px solid #888888;
-
 
           @include respond(phone) {
             top: 54rem;
@@ -588,7 +588,7 @@
 
           @include respond(tab) {
             width: 90%;
-          } 
+          }
 
           #firstBox {
             width: 100%;

@@ -59,7 +59,7 @@ function Knockout({ teams }) {
   let nodes = 0; // sets the teams
 
   const logTeams = (e) => {
-    console.log(matchUp)
+    console.log(matchUp);
 
     const team = e.target.parentElement.childNodes[0];
     const img = team.childNodes[0];
@@ -112,25 +112,21 @@ function Knockout({ teams }) {
     });
   }
 
-  // setInterval(() => {
-    
-  // let viewportWidth = window.innerWidth;
+  setInterval(() => {
+    let viewportWidth = window.innerWidth;
 
+    function resetCar() {
+      if (viewportWidth > 1501) {
+        arr.forEach((el, i) => {
+          el.current.style.transform = `translateX(${0}%)`;
+        });
 
-  // function resetCar() {
-  //   if (viewportWidth > 1500) {
-  //     arr.forEach((el, i) => {
-  //       el.current.style.transform = `translateX(${0}%)`;
-  //     });
+        console.log("ues");
+      }
+    }
 
-  //     console.log(
-  //       'ues'
-  //     )
-  //   }
-  // }
-
-  // window.addEventListener("resize", resetCar);
-  // })
+    window.addEventListener("resize", resetCar);
+  });
 
   return (
     <div className="knockout">
@@ -195,7 +191,7 @@ function Knockout({ teams }) {
               <span className="hor1"></span>
               <span className="hor2"></span>
               <span className="mid"></span>
-            </span> 
+            </span>
           </div>
         </div>
 
