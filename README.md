@@ -9,3 +9,9 @@
 ### Logic
 ### 1. Create drag and drop
 ### 2. make sure to implement undoing team selection in knockout stages.
+
+
+### edge cases:
+
+### 1. take care of the cur since it makes the code declare winners early.
+
