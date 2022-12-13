@@ -861,38 +861,3 @@ function Knockout({ teams }) {
 }
 
 export default Knockout;
-//  else if (curDataId === "8") {
-//   const els = document.getElementById(`q${5}`).childNodes[0]
-//   .childNodes[0];
-
-// const imgs = img.cloneNode(true);
-// const p = document.createElement("p");
-// p.textContent = el.code;
-
-// els.appendChild(imgs);
-// els.appendChild(p);
-
-// if (nodes === 0) {
-//   nodes = 1;
-// } else if (nodes === 1) {
-//   nodes = 0;
-//   cur++;
-// }
-// } else if (curDataId === "9") {
-// const els = document.getElementById(`q${5}`).childNodes[1]
-//   .childNodes[0];
-
-// const imgs = img.cloneNode(true);
-// const p = document.createElement("p");
-// p.textContent = el.code;
-
-// els.appendChild(imgs);
-// els.appendChild(p);
-
-// if (nodes === 0) {
-//   nodes = 1;
-// } else if (nodes === 1) {
-//   nodes = 0;
-//   cur++;
-// }
-// }
