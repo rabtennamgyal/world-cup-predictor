@@ -63,17 +63,6 @@ function Knockout({ teams }) {
     const img = team.childNodes[0];
     const name = team.childNodes[1].textContent;
 
-    // if (cur === 8) {
-    //   console.log(`${name} is World Champion 🏆`);
-    //   return;
-    // }
-
-    // 1. Make the visual changes
-    // e.target.parentElement.style.backgroundColor = "#005CFF";
-    // team.childNodes[1].style.color = "#fff";
-
-    // 2. Make the functional changes
-
     matchUp.forEach((el) => {
       el.forEach((el) => {
         if (el.code === name) {
@@ -87,10 +76,6 @@ function Knockout({ teams }) {
             if (els.hasChildNodes()) {
               while (els.hasChildNodes()) {
                 els.removeChild(els.firstChild);
-                // e.target.parentElement.style.backgroundColor = "#fff";
-                // team.childNodes[1].style.color = "#000";
-                console.log(e.target.parentElement.parentElement);
-                console.log(cur);
               }
 
               const imgs = img.cloneNode(true);
@@ -637,7 +622,6 @@ function Knockout({ teams }) {
     const img = winner.childNodes[0].childNodes[0];
     const code = winner.childNodes[0].childNodes[1].textContent;
 
-    console.log(`${img} ${code} is World Champion.`);
     alert(`${code} is world champion.`)
   };
 
@@ -662,9 +646,6 @@ function Knockout({ teams }) {
       </div>
 
       <div className="btns">
-        <button className="btn" id="left">
-          &larr;
-        </button>
         <button className="btn" id="right" onClick={slideLeft}>
           &rarr;
         </button>

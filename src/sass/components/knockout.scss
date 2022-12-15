@@ -78,7 +78,6 @@
     @include respond(phone) {
       width: 95%;
       overflow: hidden;
-      // border: solid red;
     }
 
     @include respond(desk) {
@@ -185,7 +184,7 @@
               left: 70%;
 
               @include respond(phone) {
-                left: 90%;
+                left: 85%;
               }
 
               &:hover {
@@ -207,8 +206,6 @@
 
         #ver1 {
           z-index: -100;
-          // top: 20.3rem;
-          // left: 90%;
           top: 11rem;
           left: 100%;
           position: absolute;
